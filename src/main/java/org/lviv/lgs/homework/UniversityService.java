@@ -63,4 +63,8 @@ public class UniversityService {
     public void updateAddressById(int id, String address){
         universityRepository.updateAddressById(address, id);
     }
+
+    public UniversityDto getNameAndNumberOfStudentsById(int id){
+        return universityRepository.getNameAndNumberOfStudentsById(id);
+    }
 }

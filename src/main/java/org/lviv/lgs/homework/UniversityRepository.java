@@ -39,4 +39,7 @@ public interface UniversityRepository extends JpaRepository<University, Integer>
     @Transactional
     @Query("UPDATE University u SET u.address = :address WHERE u.id = :id")
     void updateAddressById(@Param("address") String address, @Param("id") int id);
+
+    @Query("SELECT u.name AS name, u.numberOfStudents AS numberOfStudents FROM University u WHERE u.id = :id")
+    UniversityDto getNameAndNumberOfStudentsById(@Param("id") int id);
 }
