@@ -38,13 +38,29 @@ public class UniversityService {
         universityRepository.deleteById(id);
     }
 
-    public void update(int id, University university){
-        universityRepository.update(
+    public void updateById(int id, University university){
+        universityRepository.updateById(
                 university.getName(),
                 university.getAccreditationLevel(),
                 university.getNumberOfStudents(),
                 university.getAddress(),
                 id
         );
+    }
+
+    public void updateNameById(int id, String name){
+        universityRepository.updateNameById(name, id);
+    }
+
+    public void updateAccreditationLevelById(int id, int accreditationLevel){
+        universityRepository.updateAccreditationLevelById(accreditationLevel, id);
+    }
+
+    public void updateNumberOfStudentsById(int id, int numberOfStudents){
+        universityRepository.updateNumberOfStudentsById(numberOfStudents, id);
+    }
+
+    public void updateAddressById(int id, String address){
+        universityRepository.updateAddressById(address, id);
     }
 }

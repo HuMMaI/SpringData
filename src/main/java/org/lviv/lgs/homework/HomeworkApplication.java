@@ -49,7 +49,7 @@ public class HomeworkApplication {
 		System.out.println("=================================================================================");
 
 		System.out.println("=================================================================================");
-		universityService.deleteById(5);
+		universityService.deleteById(6);
 		List<University> universities1 = universityService.findAll();
 		System.out.println(universities1);
 		System.out.println("=================================================================================");
@@ -61,10 +61,20 @@ public class HomeworkApplication {
 				.setNumberOfStudents(800)
 				.setAddress("address3")
 				.build();
-		universityService.update(8, newUniversity3);
+		universityService.updateById(10, newUniversity3);
 
-		University find1 = universityService.findById(8);
+		University find1 = universityService.findById(10);
 		System.out.println(find1);
+		System.out.println("=================================================================================");
+
+		System.out.println("=================================================================================");
+		universityService.updateNameById(12, "update");
+		universityService.updateAccreditationLevelById(12, 20);
+		universityService.updateNumberOfStudentsById(12, 2000);
+		universityService.updateAddressById(12, "update_address");
+
+		University find2 = universityService.findById(12);
+		System.out.println(find2);
 		System.out.println("=================================================================================");
 	}
 
