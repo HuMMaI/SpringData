@@ -67,4 +67,8 @@ public class UniversityService {
     public UniversityDto getNameAndNumberOfStudentsById(int id){
         return universityRepository.getNameAndNumberOfStudentsById(id);
     }
+
+    public List<University> findByNumberOfStudents(int numberOfStudents){
+        return universityRepository.findByNumberOfStudents(numberOfStudents);
+    }
 }

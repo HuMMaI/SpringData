@@ -7,6 +7,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface UniversityRepository extends JpaRepository<University, Integer> {
     @Modifying
@@ -42,4 +44,6 @@ public interface UniversityRepository extends JpaRepository<University, Integer>
 
     @Query("SELECT u.name AS name, u.numberOfStudents AS numberOfStudents FROM University u WHERE u.id = :id")
     UniversityDto getNameAndNumberOfStudentsById(@Param("id") int id);
+
+    List<University> findByNumberOfStudents(int numberOfStudents);
 }
